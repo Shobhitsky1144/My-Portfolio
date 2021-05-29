@@ -9,7 +9,7 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
-    
+    overflow-x: hidden;
 }
 html{
     scroll-behavior: smooth;
@@ -28,11 +28,41 @@ header{
     clip-path: polygon(0 0,100% 0,100% 100%,70% 87%,0 100%);
     
 }
+.hamberger{
+    display: none;
+}
 .container{
     max-width: 1152px;
     padding: 0 15px;
     margin: 0 auto;
 }
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+      
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+     
+    }
+  }
+  
+  @media (min-width: 992px) {
+     .container {
+      max-width: 960px;
+      
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1152px;
+     
+    }
+  }
 header nav .left a{
     color: var(--pure);
     text-decoration: none;
@@ -118,6 +148,7 @@ section.about .social{
 }
 section.about .social a{
     background: var(--dark);
+    color: var(--light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,11 +158,7 @@ section.about .social a{
     margin-right: 0.6rem;
     transition: all .3s ease;
 }
-section.about .social a img{
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-}
+
 section.about .social a:hover{
     background: var(--primary);
 
@@ -294,12 +321,20 @@ section.work .card-wrapper .card .overlay{
     opacity: 0;
     transition: all .3s ease;
 }
+input{
+    background: var(--light);
+}
+textarea{
+    background: var(--light);
+}
 section.work .card-wrapper .card:hover .overlay {
     opacity: 1;
 }
 section.work .card-wrapper .card .overlay a{
     color: var(--primary);
     text-decoration: none;
+    font-weight: bolder;
+    font-size: xx-large;
 }
 section.work .card-wrapper .card img{
     height: 100%;
@@ -435,6 +470,7 @@ footer .footer-logo{
 }
 footer .footer-socials a{
     margin-right: 1rem;
+    color: var(--light);
 }
 footer .footer-socials{
     margin-bottom: 3rem;
@@ -444,12 +480,7 @@ footer .copyright{
     color: var(--ternary);
 }
 
-@media (max-width:1024px){
-    Header #main-nav{
-        display: none;
-
-    }
-    .site-main-wrapper{
+  .site-main-wrapper{
         position: relative;
     
     }
@@ -462,6 +493,7 @@ footer .copyright{
         border: none;
         outline: none;
         cursor: pointer;
+        display: none;
     }
     .hamberger img{
         width: 30px;
@@ -502,5 +534,101 @@ footer .copyright{
         text-decoration: none;
         font-size: 2rem;
     }
-}
-
+    @media (max-width:1024px){
+        header #main-nav{
+            display: none;
+    
+        }
+        .hamberger{
+            display: block;
+        }
+      .hero .left img{
+          width: 260px;
+      }
+      .hero .right h1{
+          font-size: 3rem;
+      }
+      .hero{
+          padding-top:10rem ;
+      }
+      header{
+        clip-path: polygon(0 0,100% 0,100% 100%,27% 89%,0 100%);
+      }
+      section.about .about-me-img {
+        height: 360px;
+    }
+    section.services .card-wrapper {
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    section.work .card-wrapper {
+    grid-template-columns: repeat(2,1fr);
+   
+    }
+    section.blog .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+    }
+    section.blog{
+        clip-path: polygon(0 0,100% 0,100% 100%,67% 97%,0 100%);
+    }
+    }
+      
+    @media (max-width:576px){
+      .hero{
+          flex-direction: column;
+      }
+      header{
+        clip-path: polygon(0 0,100% 0,100% 100%,69% 95%,0 100%);
+      }
+      .hero .right{
+          position: absolute;
+          top: 260px;
+          padding: 0 1rem;
+          background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9));
+      }
+      .hero .left{
+          margin-top: -5rem;
+          margin-right: -9rem;
+          padding-bottom: 4rem;
+      }
+      .about-inner-wrap{
+         flex-direction: column;
+      }
+      .about .right{
+          text-align: center;
+          margin-top: 2rem;
+      }
+      section.about .social {
+        justify-content: center;
+    }
+    section{
+         padding: 4rem 0;
+    }
+    section.services .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+        margin-top: 6rem;
+    }
+    section.freelancer h1{
+        line-height: 1.2;
+    }
+    section.freelancer{
+        clip-path: polygon(0 0,100% 0,100% 100%,67% 90%,0 100%);
+        padding-bottom: 8rem;
+    }
+    section.reviews .slider .slide{
+        padding:0;
+    }
+    .section-heading + p{
+       margin-bottom: 3rem;
+    }
+    section.work .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+    }
+    section.contact .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+    section.contact .input-wrap {
+        grid-template-columns: repeat(1,1fr);
+    }
+    }
